@@ -1,0 +1,89 @@
+@mixin list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+@mixin none {
+	display:none;
+}
+
+@mixin trans {
+	transition: .3s ease;
+}
+
+@mixin button {
+  position: relative;
+  outline-offset: 2px;
+	font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  padding: 15.5px 22px;
+  background-color: $btn-color;
+  @include trans;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    border: 2px solid $active;
+  }
+
+  &:hover {
+    background-color: $focus
+  }
+
+  &:active {
+    background-color: $active
+  }
+
+  &:focus-visible:before {
+   visibility: visible;
+   opacity: 1;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 12px 22px;
+    font-size: 14px;
+     line-height: 16px;
+
+  }
+}
+
+@mixin wrap($number) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $number; // количество строк
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin grid {
+  grid-template-columns: repeat(12, 1fr);
+}
+
+@mixin gridSmallD {
+  @media (max-width: $smallD) {
+    grid-template-columns: repeat(8, 1fr);
+   }
+}
+
+@mixin gridTablet {
+  @media (max-width: $tablet) {
+     grid-template-columns: repeat(6, 1fr);
+   }
+}
+
+@mixin gridMobile {
+  @media (max-width: $mobile) {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+}

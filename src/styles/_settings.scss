@@ -1,0 +1,203 @@
+@import "vars";
+@import "mixins";
+
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto-Bold"),
+  url("../fonts/Roboto-Bold.woff2") format("woff2"),
+  url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Roboto;
+  src: local("Roboto-Regular"),
+  url("../fonts/Roboto-Regular.woff2") format("woff2"),
+  url("../fonts/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TT;
+  src: local("TTFirsNeue-Bold"),
+  url("../fonts/TTFirsNeue-Bold.woff2") format("woff2"),
+  url("../fonts/TTFirsNeue-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TT;
+  src: local("TTFirsNeue-Medium"),
+  url("../fonts/TTFirsNeue-Medium.woff2") format("woff2"),
+  url("../fonts/TTFirsNeue-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: TT;
+  src: local("TTFirsNeue-Regular"),
+  url("../fonts/TTFirsNeue-Regular.woff2") format("woff2"),
+  url("../fonts/TTFirsNeue-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	font-family: "Roboto", "TT", sans-serif;
+}
+
+img {
+	max-width: 100%;
+}
+
+ul {
+	@include list;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5 {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+	max-width: 1320px;
+
+
+  @media (max-width: $smallD) {
+     
+    max-width: 994px;
+    
+  }
+
+  @media (max-width: $tablet) {
+    
+    max-width: 740px;
+  
+  }
+
+  @media (max-width: $mobile) {
+    padding-left: 21px;
+    padding-right: 21px;
+    max-width: 740px;
+  }
+
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+ 	transition: .3s ease;
+  outline: none;
+}
+
+
+button {
+	cursor: pointer;
+  text-decoration: none;
+	transition: .3s ease;
+  color: inherit;
+  outline: none;
+	border: none;
+	margin: 0;
+	padding: 0;
+	background-color: transparent;
+}
+
+.banner {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 7px 15px;
+  background-color: $background-color;
+
+  @media (max-width: $mobile) {
+    top: 6px;
+    right: 6px;
+    padding: 4px 7px;
+  }
+
+  &__text {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+
+    @media (max-width: $mobile) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+}
+
+.title {
+  font-family: TT;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+
+  @media (max-width: $mobile) {
+    font-size: 18px;
+    line-height: 23px;
+  }
+}
+
+.title3 {
+  font-family: 'TT';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 22px;
+  color: #FFFFFF;
+
+  @media (max-width: $mobile) {
+    font-size: 18px;
+  // line-height: 22px;
+  }
+
+}
+
+.valid {
+  display: none;
+}
+
+.invalid {
+  display: block;
+  position: absolute;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 11px;
+  color: #F06666; 
+}
+
